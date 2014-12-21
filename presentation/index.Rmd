@@ -1,0 +1,73 @@
+---
+title       : Calculating compound interest
+subtitle    : Developing Data Products (Course Project)
+author      : Manzil Malla
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Information Page
+
+The calculater app gives the compound interest on a base amount over the selected period. The interest rate can be compounded daily, weekly, monthly, semi-annually or annually and user can select either one of the options. 
+
+The interest rate can be selected from a range of 0% to 10%.
+
+The period can be selected from a range of 1990 to 2050.
+
+Additionally, user also have the option to include inflation rate, starting from the first year of the period through the end of the period. The inflation rate is assumed to be fixed over this period.
+
+The inflation rate can be selected from a range of 0% to 5%.
+
+--- .class #id 
+
+## Screenshot of the app
+![alt text](figures/capture.png)
+
+--- .class #id 
+
+
+## Web Links
+
+The materials can be found in:
+
+Web app: [https://manzilmalla.shinyapps.io/Developing-Data-Products/]
+
+GitHub Repo: [https://github.com/manzilmalla/Developing-Data-Products]
+
+--- .class #id 
+
+## Example
+For example, the table below shows the yearly balance and interest on the principal amount of $1,000 between 2010 through 2015, compounded semi-annually at the annual interest rate of 2.5%. The table also includes the balance and interest with inflation of 1.5% annually.
+
+```{r echo=FALSE}
+
+m<-matrix(0,ncol=1,nrow=6)
+
+files<-data.frame(m)
+names(files)<-c("year")
+
+for (i in 1:6){
+  files$year[i]=i+2009
+}
+
+compound_amount<-function(principal,rate,start,end,interval,inflation){
+  principal*(1+(rate/interval))^(interval*(end-start))*((1+inflation)^(end-start))
+}
+
+files$balance<-mapply(compound_amount,1000,0.025,2010,files$year,2,0)
+files$interest<-files$balance-1000
+
+files$Balance_With_Inflation<-mapply(compound_amount,1000,0.025,2010,files$year,2,0.015)
+files$Interest_With_Inflation<-files$Balance_With_Inflation-1000
+
+```
+
+
+```{r, results='asis'}
+knitr::kable(files)
+```

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculating compound interest</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Calculating compound interest">
+  <meta name="author" content="Manzil Malla">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Calculating compound interest</h1>
+    <h2>Developing Data Products (Course Project)</h2>
+    <p>Manzil Malla<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Information Page</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The calculater app gives the compound interest on a base amount over the selected period. The interest rate can be compounded daily, weekly, monthly, semi-annually or annually and user can select either one of the options. </p>
+
+<p>The interest rate can be selected from a range of 0% to 10%.</p>
+
+<p>The period can be selected from a range of 1990 to 2050.</p>
+
+<p>Additionally, user also have the option to include inflation rate, starting from the first year of the period through the end of the period. The inflation rate is assumed to be fixed over this period.</p>
+
+<p>The inflation rate can be selected from a range of 0% to 5%.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Screenshot of the app</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="figures/capture.png" alt="alt text"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Web Links</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The materials can be found in:</p>
+
+<p>Web app: [<a href="https://manzilmalla.shinyapps.io/Developing-Data-Products/">https://manzilmalla.shinyapps.io/Developing-Data-Products/</a>]</p>
+
+<p>GitHub Repo: [<a href="https://github.com/manzilmalla/Developing-Data-Products">https://github.com/manzilmalla/Developing-Data-Products</a>]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For example, the table below shows the yearly balance and interest on the principal amount of $1,000 between 2010 through 2015, compounded semi-annually at the annual interest rate of 2.5%. The table also includes the balance and interest with inflation of 1.5% annually.</p>
+
+<pre><code class="r">knitr::kable(files)
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="right">year</th>
+<th align="right">balance</th>
+<th align="right">interest</th>
+<th align="right">Balance_With_Inflation</th>
+<th align="right">Interest_With_Inflation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="right">2010</td>
+<td align="right">1000.000</td>
+<td align="right">0.00000</td>
+<td align="right">1000.000</td>
+<td align="right">0.00000</td>
+</tr>
+<tr>
+<td align="right">2011</td>
+<td align="right">1025.156</td>
+<td align="right">25.15625</td>
+<td align="right">1040.534</td>
+<td align="right">40.53359</td>
+</tr>
+<tr>
+<td align="right">2012</td>
+<td align="right">1050.945</td>
+<td align="right">50.94534</td>
+<td align="right">1082.710</td>
+<td align="right">82.71016</td>
+</tr>
+<tr>
+<td align="right">2013</td>
+<td align="right">1077.383</td>
+<td align="right">77.38318</td>
+<td align="right">1126.596</td>
+<td align="right">126.59629</td>
+</tr>
+<tr>
+<td align="right">2014</td>
+<td align="right">1104.486</td>
+<td align="right">104.48610</td>
+<td align="right">1172.261</td>
+<td align="right">172.26129</td>
+</tr>
+<tr>
+<td align="right">2015</td>
+<td align="right">1132.271</td>
+<td align="right">132.27083</td>
+<td align="right">1219.777</td>
+<td align="right">219.77725</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Information Page'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Screenshot of the app'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Web Links'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
